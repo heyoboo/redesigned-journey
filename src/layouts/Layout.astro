@@ -4,40 +4,47 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear();;
+
+
+
 ---
+
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen">
+  <body class="min-h-screen" >
+    <script is:inline>    
+    </script>
     <header class="p-4">
-      <nav class="flex items-center justify-between">
+      <nav class="flex flex-row items-center justify-around w-full">
         <div class="font-bold">HEYOBOO</div>
-        <div class="md:hidden">
-          {/* Placeholder for Hamburger Menu */}
-          <button class="hamburger-menu">☰</button>
-        </div>
-        <ul class="hidden md:flex space-x-4">
+          <div class="flex items-center">
+          <button id="theme-toggle" class="bg-transparent border-none p-0 cursor-pointer text-[#121827]"></button>            
+          </div>
+                  
+          </div>
+        <ul class="md:flex space-x-4">
           {/* Placeholder for Nav Links */}
           <li><a href="/">Home</a></li>
         </ul>
       </nav>
     </header>
     <main class="p-4">
-      <slot />
+          <slot />
     </main>
     <footer class="p-4 mt-8">
       <div class="flex space-x-4">
         {/* Placeholder for Social Media Icons */}
-        <a href="#">Icon 1</a>
-        <a href="#">Icon 2</a>
+        <a href="#"></a>
+        <a href="#"></a>
       </div>
       <p class="mt-2">Made with 🤖 by HEYOBOO</p>
       <p>HEYOBOO {currentYear} All Rights Reserved</p>

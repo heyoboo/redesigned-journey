@@ -4,8 +4,22 @@
 
 @layer base {
   body {
-    @apply bg-white text-[#121827] dark:bg-[#121827] dark:text-white;
+    @apply bg-white text-[#121827];
   }
+
+  body[data-theme='dark'] {
+    @apply bg-[#121827] text-white;
+  }
+
+
+  #theme-toggle {
+    @apply bg-transparent border-none p-0 cursor-pointer text-[#121827];
+  }
+  #theme-toggle[data-theme='dark'] {
+      @apply text-white;
+  }
+
+
 
   /* Other base styles can be added here */
 }
